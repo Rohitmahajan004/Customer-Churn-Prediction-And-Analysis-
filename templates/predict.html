@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Own Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-control {
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+        .form-control:focus {
+            outline: none;
+            border: 2px solid #00c6ff;
+            box-shadow: 0px 4px 10px rgba(0, 194, 255, 0.6);
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background: #0072ff;
+            color: #fff;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.5);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-back {
+            background: linear-gradient(135deg, #ff5f6d, #ffc3a0);
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-back:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(255, 85, 102, 0.5);
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Enter Data for Churn Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="Purchase_Frequency">Purchase Frequency</label>
+                <input type="number" class="form-control" name="Purchase_Frequency" placeholder="e.g., 12 (monthly)" required>
+            </div>
+            <div class="form-group">
+                <label for="Average_Order_Value">Average Order Value</label>
+                <input type="number" class="form-control" name="Average_Order_Value" placeholder="e.g., 50 (in dollars)" required>
+            </div>
+            <div class="form-group">
+                <label for="Time_Between_Purchases">Time Between Purchases</label>
+                <input type="number" class="form-control" name="Time_Between_Purchases" placeholder="e.g., 30 (in days)" required>
+            </div>
+            <div class="form-group">
+                <label for="Lifetime_Value">Lifetime Value</label>
+                <input type="number" class="form-control" name="Lifetime_Value" placeholder="e.g., 500 (total revenue)" required>
+            </div>
+            <div class="form-group">
+                <label for="Preferred_Purchase_Times">Preferred Purchase Times</label>
+                <input type="text" class="form-control" name="Preferred_Purchase_Times" placeholder="e.g., Weekday Mornings" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+                <a href="{{ url_for('dashboard') }}" class="btn-back">Back to Dashboard</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

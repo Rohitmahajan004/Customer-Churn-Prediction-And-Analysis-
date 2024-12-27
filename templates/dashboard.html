@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction and Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(128, 128, 128);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 100px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: black; /* Set the text color to black */
+        }
+        .btn-primary {
+            background-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.5);
+        }
+        .btn-success {
+            background-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #1e7e34;
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(40, 167, 69, 0.5);
+        }
+        .text-center {
+            text-align: center;
+        }
+        pre {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            color: #dcdcdc;
+            font-size: 1rem;
+            line-height: 1.6;
+            white-space: pre-wrap; /* Enable word-wrapping for long lines */
+            margin-top: 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Customer Churn Prediction and Analysis</h1>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('predict_page') }}" class="btn btn-primary btn-lg">Go to Predict</a>
+            <a href="{{ url_for('analysis_page') }}" class="btn btn-success btn-lg">Go to Analysis</a>
+        </div>
+        <pre>
+            Customer Churn Web Application - Quick Guide
+            Dashboard Page:
+            
+            Predict Customer Churn: Click to input data and predict if a customer will churn.
+            View Customer Churn Analysis: Click to access Tableau visualizations for churn analysis.
+            Predict Customer Churn Page:
+            
+            Enter customer data in the provided fields.
+            Click "Predict" to see the churn prediction (stay or leave).
+            Customer Churn Analysis Page:
+            
+            Click any "Go-Through" button to open Tableau dashboards and explore churn data insights (e.g., gender, age, service usage).
+            Navigation:
+            
+            Use "Back to Dashboard" to return to the main page.
+        </pre>
+    </div>
+</body>
+</html>
